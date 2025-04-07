@@ -1,7 +1,7 @@
 .PHONY: aw-webui build install test typecheck package clean
 
 build: aw-webui
-	poetry install
+	poetry install -vv
 
 aw-webui:
 	mkdir -p aw_server/static/
@@ -19,6 +19,8 @@ endif
 
 install:
 	cp misc/aw-server.service /usr/lib/systemd/user/aw-server.service
+dev:
+	npm run dev
 
 test:
 	@# Note that extensive integration tests are also run in the bundle repo,
