@@ -28,8 +28,12 @@ def main():
         verbose=settings.verbose,
         log_stderr=True,
         log_file=True,
-    )
-
+)
+   # ========== 新增两行日志 ==========
+    from aw_server.server import app_folder, static_folder  # 从 server.py 导入路径
+    logger.info(f"App folder: {app_folder}")  # 打印模块路径
+    logger.info(f"Static folder: {static_folder}")  # 打印静态文件目录
+    # ==================================
     logger.info(f"Using storage method: {settings.storage}")
 
     if settings.testing:
@@ -38,7 +42,7 @@ def main():
     if settings.custom_static:
         logger.info(f"Using custom_static: {settings.custom_static}")
 
-    logger.info("Starting up...")
+    logger.info("Starting up1...")
     _start(
         host=settings.host,
         port=settings.port,

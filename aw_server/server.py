@@ -23,6 +23,13 @@ logger = logging.getLogger(__name__)
 
 app_folder = os.path.dirname(os.path.abspath(__file__))
 static_folder = os.path.join(app_folder, "static")
+logger.error(f"App folder path: {app_folder}")
+logger.info(f"Static folder path: {static_folder}")
+
+
+
+
+
 
 root = Blueprint("root", __name__, url_prefix="/")
 
