@@ -20,7 +20,7 @@ endif
 install:
 	cp misc/aw-server.service /usr/lib/systemd/user/aw-server.service
 dev:
-	npm run dev
+	poetry run aw-server
 
 test:
 	@# Note that extensive integration tests are also run in the bundle repo,
